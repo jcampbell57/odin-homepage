@@ -1,7 +1,7 @@
 :root {
   --primary-color: dodgerblue;
-  --secondary-color: steelblue;
-  --background-color: midnightblue;
+  --secondary-color: lightslategray;
+  --background-color: darkgray;
   --font-color: whitesmoke;
   --secondary-font-color: grey;
   }
@@ -26,19 +26,23 @@ h4 {
 }
 
 .aboutMe {
-  margin: 0.5em;
-  padding: 0.5em;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--secondary-color);
 }
 
 .aboutBlurb {
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
+  text-align: center;
+}
+
+.skillIcons {
+  font-size: 2rem;
+  text-align: center;
 }
 
 .myWork {
   margin: 1rem;
+  margin-bottom: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -47,29 +51,31 @@ h4 {
 
 .projectsContainer {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr) ) ;
 }
 
 .projectCard {
   background-color: var(--secondary-color);
-  border-radius: 4px;
+  border-radius: 8px;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
 }
 
-.screenshotContainer {
+/* .screenshotContainer {
   width: 100%;
   height: 6rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .screenshot1 {
   background-color: aquamarine;
+  
 }
 
 .screenshot2 {
@@ -99,6 +105,21 @@ h4 {
   gap: 1rem;
 }
 
+.projectHeader {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.cardIcons {
+  margin-left: auto;
+}
+
+.openIcon {
+  height: 1.5rem;
+  fill: var(--font-color)
+}
+
 .projectDescription {
   display: -webkit-box;
   -webkit-line-clamp: 6;
@@ -107,6 +128,19 @@ h4 {
 }
 
 .contactInfo {
-  margin: 0.5em;
-  padding: 0.5em;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gmailIcon {
+  height: 2rem;
+  fill: var(--font-color)
+}
+
+.connectIcons {
+  font-size: 2rem;
 }
