@@ -1,3 +1,5 @@
+/* variables and default stylings */
+
 :root {
   --primary-color: dodgerblue;
   --secondary-color: lightslategray;
@@ -11,10 +13,26 @@
   /* box-sizing: border-box; /* idk if I need this */
 }  
 
+a {
+  text-decoration: none;
+}
+
+:link {
+  color: inherit;
+}
+
+:visited {
+  color: inherit;
+}
+
+/* page formatting */
+
 body {
   background-color: var(--background-color);
   color: var(--font-color);
 }
+
+/* content styling */
 
 h2 {
   font-size: 1.5rem;
@@ -62,40 +80,28 @@ h4 {
 
   display: flex;
   flex-direction: column;
+
+  box-shadow: 2px 2px 4px gray;
+
+  /* only activate pointer events when child is hovered on: */
+  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
+  pointer-events: none;
 }
 
-/* .screenshotContainer {
+.projectCard:hover {
+  box-shadow: 2px 2px 4px black;
+}
+
+.projectCard:active {
+  box-shadow: 1px 1px 4px black;
+}
+
+
+.projectImage {
   width: 100%;
-  height: 6rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-.screenshot1 {
-  background-color: aquamarine;
-  
-}
-
-.screenshot2 {
-  background-color: blueviolet;
-}
-
-.screenshot3 {
-  background-color: tomato;
-}
-
-.screenshot4 {
-  background-color: pink;
-}
-
-.screenshot5 {
-  background-color: palegreen;
-}
-
-.screenshot6 {
-  background-color: orange;
+  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
+  pointer-events: auto;
 }
 
 .cardContent {
@@ -111,13 +117,27 @@ h4 {
   font-size: 1.5rem;
 }
 
+.projectTitle {
+  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
+  pointer-events: auto;
+}
+
 .cardIcons {
   margin-left: auto;
+
+}
+
+.devicon-github-original {
+  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
+  pointer-events: auto;
 }
 
 .openIcon {
   height: 1.5rem;
-  fill: var(--font-color)
+  fill: var(--font-color);
+  
+  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
+  pointer-events: auto;
 }
 
 .projectDescription {
@@ -125,6 +145,9 @@ h4 {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+
+  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
+  pointer-events: auto;
 }
 
 .contactInfo {
