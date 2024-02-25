@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwigley&display=swap');
+
 /* variables and default stylings */
 
 :root {
@@ -26,6 +28,13 @@ a {
 
 :visited {
   color: inherit;
+}
+
+.qwigley-regular {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-family: "Qwigley", cursive !important;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* page formatting */
