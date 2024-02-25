@@ -6,14 +6,14 @@
   --primary-color: dodgerblue;
   --secondary-color: lightslategray;
   --background-color: lightgray;
-  /* --background-color: darkgray; */
+  --background-color-dark: #3c3c3c;
   --font-color: black;
   --secondary-font-color: whitesmoke;
+  --secondary-font-hover: white;
   }
   
 * {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !important;
-  /* box-sizing: border-box; /* idk if I need this */
 }  
 
 a {
@@ -37,6 +37,7 @@ a {
   font-style: normal;
 }
 
+
 /* page formatting */
 
 body {
@@ -57,6 +58,25 @@ main {
   padding: 0 5vw;
 }
 
+
+/* dark mode styling */
+
+body.darkMode {
+  background-color: var(--background-color-dark);
+}
+
+.name.darkMode {
+  color: var(--secondary-font-color);
+}
+
+.projectsHeader.darkMode {
+  color: var(--secondary-font-color);
+}
+
+.themeToggleIcon.darkMode {
+  fill: aliceblue
+}
+
 /* content styling */
 
 .info {
@@ -67,8 +87,8 @@ main {
 .portraitImage {
   width: 40vw;
   height: 40vw;
-  max-height: 450px;
-  max-width: 450px;
+  max-height: min(90vw, 450px);
+  max-width: min(90vw, 450px);
   border-radius: 6px;
   box-shadow: 2px 2px 4px gray;
   margin-right: min(2vw, 2rem);
@@ -97,8 +117,32 @@ h4 {
   padding: min(2vw, 2rem);
   background-color: var(--secondary-color);
   box-shadow: 2px 2px 4px gray;
-  border-radius: 0 6px 0 0;
+  border-radius: 6px 6px 0 0;
   margin-left: 5vw;
+}
+
+.flexHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexHeader button {
+  background-color: unset;
+  border: none;
+}
+
+.themeToggleIcon {
+  height: 1.7rem;
+  fill: var(--secondary-font-color)
+}
+
+.themeToggleIcon:hover {
+  fill: var(--secondary-font-hover);
+}
+
+.themeToggleIcon:hover:active {
+  fill: darkgray
 }
 
 .aboutBlurb {
@@ -115,7 +159,7 @@ h4 {
   padding: min(2vw, 2rem);
   background-color: var(--secondary-color);
   box-shadow: 2px 2px 4px gray;
-  border-radius: 0 0 6px 0;
+  border-radius: 0 0 6px 6px;
   margin-left: 5vw;
 }
 
@@ -147,10 +191,6 @@ h4 {
   flex-direction: column;
 
   box-shadow: 2px 2px 4px gray;
-
-  /* only activate pointer events when child is hovered on: */
-  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
-  pointer-events: none;
 }
 
 .projectCard:hover {
@@ -163,9 +203,6 @@ h4 {
 
 .projectImage {
   width: 100%;
-
-  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
-  pointer-events: auto;
 }
 
 .cardContent {
@@ -181,9 +218,8 @@ h4 {
   font-size: 1.5rem;
 }
 
-.projectTitle {
-  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
-  pointer-events: auto;
+.projectTitle:hover {
+  color: var(--secondary-font-hover);
 }
 
 .cardIcons {
@@ -194,17 +230,9 @@ h4 {
   align-items: center;
 }
 
-.devicon-github-original {
-  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
-  pointer-events: auto;
-}
-
 .openIcon {
   height: 1.7rem;
   fill: var(--secondary-font-color);
-  
-  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
-  pointer-events: auto;
 }
 
 .openIcon:hover {
@@ -216,10 +244,19 @@ h4 {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;  
   overflow: hidden;
-
-  /* https://stackoverflow.com/questions/8114657/how-to-style-the-parent-element-when-hovering-a-child-element */
-  pointer-events: auto;
 }
+
+.projectDescription:hover {
+  color: var(--secondary-font-hover);
+}
+
+.cardSkillIcons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
 
 /* footer styling */
 
@@ -247,4 +284,26 @@ h4 {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+/* mobile support */
+
+@media only screen and (max-width: 700px) {
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portraitImage {
+    width: unset;
+    height: unset;
+    margin-right: unset;
+    align-self: center;
+  }
+
+  .aboutHeader,
+  .aboutBlurb,
+  .skillIcons {
+    margin-left: unset;
+  }
 }
