@@ -134,7 +134,8 @@ h4 {
 
 .themeToggleIcon {
   height: 1.7rem;
-  fill: var(--secondary-font-color)
+  fill: var(--secondary-font-color);
+  cursor: pointer;
 }
 
 .themeToggleIcon:hover {
