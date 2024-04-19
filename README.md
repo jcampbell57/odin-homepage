@@ -56,6 +56,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ## Improvements
 
+- allow projects to be filtered by language / framework
 - possible header with contact links and theme toggle
 - Card links like this on hover:
   - https://darknab.github.io/Portfolio/#contact
